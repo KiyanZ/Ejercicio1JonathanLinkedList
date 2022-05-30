@@ -13,5 +13,19 @@ public class Main {
         chiiLinkedList.getObjectAtPosition(3);
         chiiLinkedList.getFirstObject();
         chiiLinkedList.getLastObject();
+
+        System.out.println();
+        System.out.println();
+
+        GenericLinkedList<Integer> ez = new GenericLinkedList<>();
+        ez.insertFirst(1);
+        ez.insertLast(2);
+        ez.insertLast(2);
+        ez.insertLast(2);
+        ez.print();
+        System.out.println("NEW LINE");
+        ez.getObjectAtPosition(3);
+        ez.getFirstObject();
+        ez.getLastObject();
     }
 }
