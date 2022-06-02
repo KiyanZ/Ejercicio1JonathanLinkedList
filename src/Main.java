@@ -27,5 +27,17 @@ public class Main {
         ez.getObjectAtPosition(3);
         ez.getFirstObject();
         ez.getLastObject();
+
+
+        DoublyLinkedList<Integer> gooddays = new DoublyLinkedList<>();
+        gooddays.insertLast(1);
+        gooddays.insertFirst(5);
+        gooddays.insertLast(7);
+        gooddays.insertLast(8);
+        gooddays.insertLast(10);
+        gooddays.insertLast(9);
+        System.out.println("NEW LINE");
+        gooddays.print();
+        gooddays.printFromLast();
     }
 }

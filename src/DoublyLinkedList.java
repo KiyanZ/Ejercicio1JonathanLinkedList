@@ -16,6 +16,7 @@ public class DoublyLinkedList<E> {
         firstElement = newElement;
     }
 
+
     public void insertLast(E data) {
         DoublyLinkedList.Element<E> newElement = new DoublyLinkedList.Element<>(data);
         if (firstElement == null) {
@@ -27,18 +28,27 @@ public class DoublyLinkedList<E> {
                 currentElement = currentElement.next;
             }
             currentElement.next = newElement;
-
-
+            newElement.prev = currentElement;
         }
     }
 
     public void print() {
-        DoublyLinkedList.Element<E> currentElement = firstElement;
+        DoublyLinkedList.Element<E> currentElement = getFirstObject();
         while (currentElement != null) {
             System.out.println(currentElement.data + " ");
             currentElement = currentElement.next;
         }
     }
+
+    public void printFromLast() {
+        DoublyLinkedList.Element<E> currentElement = getLastObject();
+        System.out.println("Traversal in reverse direction");
+        while (currentElement != null) {
+            System.out.print(currentElement.data + " ");
+            currentElement = currentElement.prev;
+        }
+    }
+
 
     public boolean isEmpty() {
         //if first element is null there is no list
@@ -50,12 +60,12 @@ public class DoublyLinkedList<E> {
         return false;
     }
 
-    public Object getFirstObject() {
+    public Element<E> getFirstObject() {
         System.out.println(firstElement.data);
         return firstElement;
     }
 
-    public Object getLastObject() {
+    public Element<E> getLastObject() {
         DoublyLinkedList.Element<E> currentElement = firstElement;
         DoublyLinkedList.Element<E> lastElement = null;
 
@@ -69,7 +79,7 @@ public class DoublyLinkedList<E> {
         return lastElement;
     }
 
-    public Object getObjectAtPosition(int index) {
+    public Element<E> getObjectAtPosition(int index) {
         DoublyLinkedList.Element<E> currentElement = firstElement;
         int i = 0;
         if (index == 0) {
